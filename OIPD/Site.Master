@@ -240,13 +240,13 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
-        <br /><br /><br /><br /><br /><br /><br /><div class="w3-hide-medium w3-hide-large"><br /><br /><br /><br /><br /><br /></div>
-        <br /><br /><br />
+        <br /><br /><br /><br /><br /><div class="w3-hide-medium w3-hide-large"><br /><br /><br /><br /></div>
+       
        
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-            <hr />
+            
             <footer>
                 <p>&copy; <%: DateTime.Now.Year %> - MAIO - Application</p>
             </footer>
