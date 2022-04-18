@@ -27978,12 +27978,10 @@ WHERE  (patientno = @patientno)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"SELECT        patientno, departmentno, dateofentry, firstname, lastname, agemonths, ageyears, gender, address, fathername, referredfrom, mobileno, title, doctorno, currentuser, nextrenewdate, totalrenews, agedays, patienttype, ipnumber, 
-                         patientdata
-FROM            IODatabase.opdform
-WHERE        (CAST(dateofentry AS date) = @dateofentry)";
+            this._commandCollection[3].CommandText = "SELECT        COUNT(*) AS Expr1\r\nFROM            IODatabase.opdform\r\nWHERE       " +
+                " (dateofentry = @dateofentry)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateofentry", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateofentry", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "dateofentry", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
             this._commandCollection[4].CommandText = "UPDATE IODatabase.opdform\r\nSET          departmentno = @departmentno\r\nWHERE  (pat" +
@@ -28044,14 +28042,9 @@ WHERE        (CAST(dateofentry AS date) = @dateofentry)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSet1.opdformDataTable GetPatientCountByDate(string dateofentry) {
+        public virtual DataSet1.opdformDataTable GetPatientCountByDate(System.DateTime dateofentry) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
-            if ((dateofentry == null)) {
-                throw new global::System.ArgumentNullException("dateofentry");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(dateofentry));
-            }
+            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(dateofentry));
             DataSet1.opdformDataTable dataTable = new DataSet1.opdformDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

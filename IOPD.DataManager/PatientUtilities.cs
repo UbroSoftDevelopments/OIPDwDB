@@ -98,8 +98,8 @@ namespace IOPD.DataManager
         public static int gettodaystotalopd()
         {
             DataSet1TableAdapters.opdformTableAdapter dt = new DataSet1TableAdapters.opdformTableAdapter();
-            DateTime today = System.DateTime.Now.AddHours(12.50); 
-            int patients = Convert.ToInt32(dt.GetPatientCountByDate(""+today));
+            DateTime today = System.DateTime.Now.AddHours(12.50);
+            int patients = Convert.ToInt32(dt.GetPatientCountByDate(today));
             return patients;
         }
         public static int gettodaystotalipd()
