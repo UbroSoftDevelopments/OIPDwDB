@@ -16,7 +16,7 @@ namespace IOPD.DataManager
                 DataSet1TableAdapters.bedallotmentTableAdapter bata = new DataSet1TableAdapters.bedallotmentTableAdapter();
 
                 bmdt.UpdatedBedPatient(patientno, bedno);
-                bata.Insert(bedno, patientno, date, comments, user);
+                bata.InsertQuery(bedno, patientno, date, comments, user);
 
                 return "successfull";
             }
