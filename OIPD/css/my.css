@@ -1,0 +1,252 @@
+﻿body a
+{
+    text-decoration:none;
+}
+
+.highlight
+{
+    text-decoration:none;
+    /*background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+    /*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 50%); /* Chrome10+,Safari5.1+ */
+    /*background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
+    /*background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* IE10+ */
+    /*background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* W3C */
+    /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+}
+
+btnDisable
+{
+    
+}
+
+btnDisable:disabled
+{
+    background:-webkit-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,1) 100%)!important; /* Chrome10+,Safari5.1+ */
+    border-radius:15px;
+}
+
+.highlight:hover
+{
+    background: -webkit-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,1) 100%)!important; /* Chrome10+,Safari5.1+ */
+}
+.downItem
+{
+    opacity:0.5;
+    color:Black;
+}
+.downItem:hover
+{
+    opacity:1.0;
+    color:White;
+}
+
+.container {
+    position: relative;
+    padding: 1px 1px 5px 1px;
+    
+}
+
+.container:after {
+    background: linear-gradient(-45deg, #ffffff 5px, transparent 0), linear-gradient(45deg, #ffffff 5px, transparent 0);
+    background-position: bottom;
+    background-repeat: repeat-x;
+    background-size: 10px 10px;
+    content: " ";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height:10px;
+}
+.rainbowText
+{
+  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f05), color-stop(1,#50f));
+  color:transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.rainbowTextInverse
+{
+  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #50f), color-stop(1,#f05));
+  color:transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.corpBack
+{
+    background:linear-gradient(to right,rgba(100,155,200,1)0%, whitesmoke 36%, whitesmoke 76%,rgba(100,155,200,1) 100%);
+    color:teal;
+}
+.greenish
+{
+    background-color:rgba(100,155,200,1);
+    color:whitesmoke;
+}
+
+.rainbowBackground
+{
+    background: -webkit-gradient( linear, left top, right top, color-stop(0, #50f), color-stop(1,#f05));
+    color:White;
+    text-shadow:5px 2px black;
+}
+.rainbowInverseBack
+{
+    background: -webkit-gradient( linear, left top, right top, color-stop(0, #f05), color-stop(1,#50f));
+    color:White;
+    text-shadow:5px 2px black;
+}
+
+.textShadow
+{
+    text-shadow:3px 2px black;
+}
+
+.textWhiteShadow
+{
+    text-shadow:3px 2px white;
+}
+
+
+.bluishBack
+{
+    background:linear-gradient(rgba(220,220,255,1.0),rgba(50,20,255,0.1));
+}
+
+.glossButton
+    {
+    background-image:-webkit-gradient(linear, 0% 1%, 0% 95%, from(rgba(255,255,255,0.9)), to(rgba(64,64,64,0.9)), color-stop(.8,rgba(64,64,64,0.25)),color-stop(.25,rgba(32,32,32,0.5)));
+    background-image:-moz-linear-gradient(top,bottom,from(rgba(255,255,255,0.9)),color-stop(80%, rgba(64,64,64,0.25)),color-stop(25%, rgba(32,32,32,0.5)),to(rgba(64,64,64,0.9)));
+}
+.glossButton:hover
+    {
+    background-image:-webkit-gradient(linear, 0% 1%, 0% 95%, from(rgba(64,64,64,0.9)), to(rgba(255,255,255,0.9)), color-stop(.8,rgba(64,64,64,0.25)),color-stop(.25,rgba(32,32,32,0.5)));
+    background-image:-moz-linear-gradient(top,bottom,from(rgba(64,64,64,0.9)),color-stop(80%, rgba(64,64,64,0.25)),color-stop(25%, rgba(32,32,32,0.5)),to(rgba(255,255,255,0.9)));
+}
+.glossBar
+    {
+    background-image:-webkit-gradient(linear, 0% 1%, 0% 95%, from(rgba(255,255,255,0.9)), to(rgba(64,64,64,0.9)), color-stop(.8,rgba(64,64,64,0.25)),color-stop(.25,rgba(32,32,32,0.5)));
+    background-image:-moz-linear-gradient(top,bottom,from(rgba(255,255,255,0.9)),color-stop(80%, rgba(64,64,64,0.25)),color-stop(25%, rgba(32,32,32,0.5)),to(rgba(64,64,64,0.9)));
+}
+.silver
+    {
+    background-image:-webkit-gradient(linear, 0% 1%, 0% 95%, from(rgba(64,64,64,0.9)), to(rgba(255,255,255,0.9)), color-stop(.8,rgba(64,64,64,0.25)),color-stop(.25,rgba(32,32,32,0.5)));
+    background-image:-moz-linear-gradient(top,bottom,from(rgba(64,64,64,0.9)),color-stop(80%, rgba(64,64,64,0.25)),color-stop(25%, rgba(32,32,32,0.5)),to(rgba(255,255,255,0.9)));
+}
+
+.zoom {
+    transition: transform .5s; /* Animation */
+    margin: 0 auto;
+}
+
+.zoom:hover {
+    transform: scale(1.15); /* (120% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)
+}
+
+.justzoom {
+    transition: transform .5s; /* Animation */
+    margin: 0 auto;
+}
+
+.justzoom:hover {
+    transform: scale(1.15); /* (120% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.text {
+  color:#ffffff;
+  font-size: 55px;
+  font-family:Berlin Sans FB Demi;
+  padding: 8px 12px;
+  position: absolute;
+  top: 100px;
+  left:50px;
+  width: 100%;
+  text-align: left;
+}
+.textsmall {
+  color:#ffffff;
+  font-size: 25px;
+  font-family:Berlin Sans FB Demi;
+  padding: 8px 12px;
+  position: absolute;
+  margin-top:-20px;
+  left:10px;
+  width: 100%;
+  text-align: left;
+}
+
+.shine-me {
+    width:100%; /*Make sure the animation is over the whole element*/
+    -webkit-animation-name: ShineAnimation;
+    -webkit-animation-duration: 10s;
+    -webkit-animation-iteration-count: infinite;
+    /*-webkit-animation-timing-function: cubic-bezier(.12,.89,.98,.47);*/
+    -webkit-animation-timing-function: linear;
+}
+
+@-webkit-keyframes ShineAnimation{
+    from {
+        background-repeat:no-repeat;
+        background-image:-webkit-linear-gradient(
+            top left,
+            rgba(255, 255, 255, 0.0) 0%,
+            rgba(255, 255, 255, 0.0) 45%,
+            rgba(255, 255, 255, 0.5) 48%,
+            rgba(255, 255, 255, 0.8) 50%,
+            rgba(255, 255, 255, 0.5) 52%,
+            rgba(255, 255, 255, 0.0) 57%,
+            rgba(255, 255, 255, 0.0) 100%);
+        background-position:-300px -300px;
+        background-size: 600px 600px;
+    }
+    to {
+        background-repeat:no-repeat;
+        background-position:250px 250px;
+    }
+}
+
+.shine
+{
+    animation-name: shining;
+    animation-duration:10s;
+    animation-iteration-count:infinite;
+}
+
+.back1
+{
+    background: linear-gradient(45deg, #e94086 0%, #e5925a 100%);
+}
+.back1:hover
+{
+    background: linear-gradient(135deg, #e5925a 0%, #e94086 100%);
+}
+
+.back2
+{
+    background: linear-gradient(45deg, #7349cc 0%, #e163e4 100%);
+}
+.back2:hover
+{
+    background: linear-gradient(135deg, #e163e4 0%, #7349cc 100%);
+}
+
+.back3
+{
+    background: linear-gradient(45deg, #00aee0 0%, #00fedc 100%);
+}
+.back3:hover
+{
+    background: linear-gradient(135deg, #00fedc 0%, #00aee0 100%);
+}
+
+.backA
+{
+    background: linear-gradient(45deg, #e94086 0%, #7349cc 50%, #00fedc 100%);
+}
+.backA:hover
+{
+    background: linear-gradient(135deg, #00fedc 0%, #7349cc 50%, #e94086 100%);
+}

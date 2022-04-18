@@ -1,0 +1,257 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="OIPD.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <link href="css/w3.css" rel="Stylesheet" />
+    <link href="css/my.css" rel="Stylesheet" />
+     <link href="Resources/geetanjaliLogo.png" rel="Shortcut Icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script  src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+    <title><%: Page.Title %> - MAIO - Application</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body>
+    <div class="w3-top w3-mobile">
+        <div class="w3-container w3-mobile corpBack w3-row">
+            <div class="w3-col s2 w3-mobile w3-margin-bottom w3-margin-top w3-center">
+                <a href="home.aspx">
+                    <img src="Resources/geetanjaliLogo.png" alt="Logo" class="w3-hide-small" width="30%"/>
+                    <img src="Resources/geetanjaliLogo.png" alt="Logo" class="w3-hide-medium w3-hide-large" width="20%"/>
+                </a>
+            </div>
+            <div class="w3-col s10 w3-mobile">
+                <div class="w3-hide-small">
+                    <label class="w3-left" style="font-weight:bold">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AN ISO : 9001:2015 CERTIFIED HOSPITAL</label>
+                    <label class="w3-right" style="font-weight:bold">Reged No. : CMO/HOP/21/MZP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><br/>
+                    <center>
+                        <label class="w3-xlarge w3-center"><b>Geetanjali Life Care & Surgical Pvt. Ltd. | Trauma & Critical Care</b></label><!--<center><label class="w3-xxlarge w3-text-aqua w3-center">लाइफ केयर हॉस्पिटल एंड सर्जिकल सेंटर ट्रामा क्रिटिकल केयर</label>--><br />
+                        <label class="w3-large w3-center w3-centered" ><b>Mirzapur - Varanasi Road, Milkipur | Uttar Pradesh 231305</b></label>
+                    </center>
+                </div>
+                <div class="w3-hide-large w3-hide-medium">
+                    <center>   
+                        <label class="w3-small" style="font-weight:bold">AN ISO : 9001:2015 CERTIFIED HOSPITAL</label><br />
+                        <label class="w3-small" style="font-weight:bold">Reged No. : CMO/HOP/21/MZP</label><br/>
+                        <label class="w3-center"><b>Geetanjali Life Care & Surgical Pvt. Ltd.<br />Trauma & Critical Care</b></label><!--<center><label class="w3-xxlarge w3-text-aqua w3-center">लाइफ केयर हॉस्पिटल एंड सर्जिकल सेंटर ट्रामा क्रिटिकल केयर</label>--><br />
+                        <label class="w3-center w3-centered" ><b>Mirzapur - Varanasi Road, Milkipur</b></label><br />
+                        <label class="w3-center w3-centered"><b>Uttar Pradesh 231305</b></label>
+                    </center>
+                </div>
+            </div>
+        </div>
+        <!-------------------------------------------------------------------------------------------------->
+        <div class="w3-bar greenish glossBar" id="adminMenu" runat="server">
+            <a href="home.aspx" class="w3-bar-item glossButton w3-button"><img src="Resources/home.png" alt="homeLogo" height="17" /> Home</a>
+            <div class="w3-dropdown-hover w3-hide-small">
+                <button class="w3-button"><img src="Resources/opdEntry.png" alt="printLogo" height="17" /> OPD</button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                    <a href="departmentlist.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/opdEntry.png" alt="opdLogo" height="17" /> New Patient</a>
+                    <a href="renewal.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/ipdEntry.png" alt="ipdLogo" height="17" /> Renew Form</a>
+                </div>
+            </div>
+            <a href="ipdregistration.aspx" class="w3-bar-item w3-button w3-hide-small glossButton"><img src="Resources/ipdEntry.png" alt="ipdLogo" height="17" /> IPD</a>
+            <a href="emergency.aspx" class="w3-bar-item w3-button w3-hide-small glossButton"><img src="Resources/emergency.png" alt="emergencyLogo" height="17" /> Emergency</a>
+            <a href="changeWard.aspx" class="w3-bar-item w3-button w3-hide-small glossButton"><img src="Resources/transfer.png" alt="transferLogo" height="17" /> Transfer</a>
+            <a href="discharge.aspx" class="w3-bar-item w3-button w3-hide-small glossButton"><img src="Resources/discharge.png" alt="dischargeLogo" height="17" /> Discharge</a>
+            <div class="w3-dropdown-hover w3-hide-small">
+                <button class="w3-button"><img src="Resources/searching.png" alt="searchLogo" height="17" /> Patient</button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                    <a href="searchPatient.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/searching.png" alt="searchLogo" height="17" /> Patient Data</a>
+                    <a href="treatementList.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/list.png" alt="treatement" height="17" /> Treatement</a>
+                    <a href="uploadList.aspx" class="w3-bar-item w3-button glossButton"><i class="fa fa-arrow-up" style="height:17"></i> Upload Documents</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-hide-small">
+                <button class="w3-button"><img src="Resources/list.png" alt="printLogo" height="17" /> Lists</button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                    <a href="opdPatientsList.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/opdEntry.png" alt="opdLogo" height="17" /> OPD List</a>
+                    <a href="ipdPatientsList.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/ipdEntry.png" alt="ipdLogo" height="17" /> IPD List</a>
+                    <a href="dischargedPatient.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/discharge.png" alt="opdLogo" height="17" /> Discharged List</a>
+                    <a href="filter.aspx" class="w3-bar-item w3-button glossButton"><i class="fa fa-list" style="height:17"></i> All List</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-hide-small">
+                <button class="w3-button"><img src="Resources/payments.png" alt="payLogo" height="17" /> Payments</button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                    <a href="payments.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/payments.png" alt="payLogo" height="17" /> New Payment</a>
+                    <a href="extraIncome.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/payments.png" alt="payLogo" height="17" /> Extra Payment</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-hide-small">
+                <button class="w3-button"><img src="Resources/print.png" alt="printLogo" height="17" /> Print</button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                    <a href="opdPatientsList.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/opdEntry.png" alt="opdLogo" height="17" /> Print OPD Form</a>
+                    <a href="prescriptionList.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/print.png" alt="opdLogo" height="17" /> Print Prescription</a>
+                    <a href="ipdPatientsList.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/ipdEntry.png" alt="ipdLogo" height="17" /> Print IPD Form</a>
+                    <a href="printReceiptList.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/print.png" alt="printLogo" height="17" /> Print Bill</a>
+                    <a href="printPad.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/pad.png" alt="opdLogo" height="17" /> Print Pad</a>
+                    <a href="xrayPathList.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/print.png" alt="printLogo" height="17" /> Print X-Ray/Pathology Bill</a>
+                    <a href="generateID.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/print.png" alt="printLogo" height="17" /> Print Staff ID</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-hide-small">
+                <button class="w3-button"><img src="Resources/settings.png" alt="settingLogo" height="17" /> Settings</button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                    <a href="departmentmaster.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/addDepart.png" alt="departLogo" height="17" /> Add/Remove Department</a>
+                    <a href="wardmaster.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/addWard.png" alt="wardLogo" height="17" /> Add/Remove Ward</a>
+                    <a href="doctorslist.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/addDoctor.png" alt="wardLogo" height="17" /> Add/Remove Doctor</a>
+                    <a href="createUser.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/newUser.png" alt="wardLogo" height="17" /> Add/Remove User</a>
+                    <a href="refferalhospitals.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/addDepart.png" alt="wardLogo" height="17" /> Add/Remove Hospital</a>
+                    <a href="createCharges.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/payments.png" alt="payLogo" height="17" /> Add/Remove Charges</a>
+                    <a href="hospitalDetails.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/list.png" alt="viewLogo" height="17" /> View Patients</a>
+                    <a href="hospitalSummary.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/list.png" alt="viewLogo" height="17" /> Income Summary</a>
+                    <a href="viewDues.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/list.png" alt="viewLogo" height="17" /> View Dues</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-hide-small w3-right">
+                <button class="w3-button"><asp:Label ID="adUser" Text="Hi Guest" runat="server"></asp:Label></button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4 w3-left" style="right:0">
+                    <a href="mycollection.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/payments.png" alt="changeLogo" height="17" /> Collections</a>
+                    <a href="changePassword.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/changePass.png" alt="changeLogo" height="17" /> Change Password</a>
+                    <a href="logout.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/logout.png" alt="logoutLogo" height="17" /> Log Out</a>
+                </div>
+            </div>
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large glossButton w3-hide-medium" onclick="myFunction()">&#9776;</a>
+        </div>
+        <div id="demo" class="w3-bar-block w3-red w3-hide w3-hide-large w3-hide-medium" runat="server">
+          <a href="departmentlist.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/opdEntry.png" alt="opdLogo" height="17" /> OPD</a>
+          <a href="ipdregistration.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/ipdEntry.png" alt="ipdLogo" height="17" /> IPD</a>
+          <a href="discharge.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/discharge.png" alt="dischargeLogo" height="17" /> Discharge</a>
+        </div>
+
+        <div class="w3-bar greenish glossBar" id="userMenu" runat="server">
+            <a href="home.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/home.png" alt="homeLogo" height="17" /> Home</a>
+            <div class="w3-dropdown-hover w3-hide-small">
+                <button class="w3-button"><img src="Resources/opdEntry.png" alt="printLogo" height="17" /> OPD</button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                    <a href="departmentlist.aspx" class="w3-bar-item glossButton w3-button"><img src="Resources/opdEntry.png" alt="opdLogo" height="17" /> New Patient</a>
+                    <a href="renewal.aspx" class="w3-bar-item glossButton w3-button"><img src="Resources/ipdEntry.png" alt="ipdLogo" height="17" /> Renew Form</a>
+                </div>
+            </div>
+            <a href="ipdregistration.aspx" class="w3-bar-item glossButton w3-button w3-hide-small"><img src="Resources/ipdEntry.png" alt="ipdLogo" height="17" /> IPD</a>
+            <a href="emergency.aspx" class="w3-bar-item glossButton w3-button w3-hide-small"><img src="Resources/emergency.png" alt="emergencyLogo" height="17" /> Emergency</a>
+            <a href="changeWard.aspx" class="w3-bar-item glossButton w3-button w3-hide-small"><img src="Resources/transfer.png" alt="transferLogo" height="17" /> Transfer</a>
+            <a href="discharge.aspx" class="w3-bar-item glossButton w3-button w3-hide-small"><img src="Resources/discharge.png" alt="dischargeLogo" height="17" /> Discharge</a>
+            <div class="w3-dropdown-hover w3-hide-small">
+                <button class="w3-button"><img src="Resources/searching.png" alt="searchLogo" height="17" /> Patient</button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                    <a href="searchPatient.aspx" class="w3-bar-item glossButton w3-button"><img src="Resources/searching.png" alt="searchLogo" height="17" /> Patient Data</a>
+                    <a href="treatementList.aspx" class="w3-bar-item glossButton w3-button"><img src="Resources/list.png" alt="treatement" height="17" /> Treatement</a>
+                    <a href="uploadList.aspx" class="w3-bar-item glossButton w3-button"><i class="fa fa-arrow-up" style="height:17"></i> Upload Documents</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-hide-small">
+                <button class="w3-button"><img src="Resources/list.png" alt="printLogo" height="17" /> Lists</button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                    <a href="opdPatientsList.aspx" class="w3-bar-item glossButton w3-button"><img src="Resources/opdEntry.png" alt="opdLogo" height="17" /> OPD List</a>
+                    <a href="ipdPatientsList.aspx" class="w3-bar-item glossButton w3-button"><img src="Resources/ipdEntry.png" alt="ipdLogo" height="17" /> IPD List</a>
+                    <a href="dischargedPatient.aspx" class="w3-bar-item glossButton w3-button"><img src="Resources/discharge.png" alt="opdLogo" height="17" /> Discharged List</a>
+                </div>
+            </div>
+            
+            <div class="w3-dropdown-hover w3-hide-small">
+                <button class="w3-button"><img src="Resources/payments.png" alt="payLogo" height="17" /> Payments</button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                    <a href="payments.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/payments.png" alt="payLogo" height="17" /> New Payment</a>
+                    <a href="extraIncome.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/payments.png" alt="payLogo" height="17" /> Extra Payment</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-hide-small">
+                <button class="w3-button"><img src="Resources/print.png" alt="printLogo" height="17" /> Print</button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                    <a href="opdPatientsList.aspx" class="w3-bar-item glossButton w3-button"><img src="Resources/opdEntry.png" alt="opdLogo" height="17" /> Print OPD Form</a>
+                    <a href="ipdPatientsList.aspx" class="w3-bar-item glossButton w3-button"><img src="Resources/ipdEntry.png" alt="ipdLogo" height="17" /> Print IPD Form</a>
+                    <a href="printReceiptList.aspx" class="w3-bar-item glossButton w3-button"><img src="Resources/print.png" alt="printLogo" height="17" /> Print Bill</a>
+                    <a href="printPad.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/pad.png" alt="opdLogo" height="17" /> Print Pad</a>
+                    <a href="xrayPathList.aspx" class="w3-bar-item glossButton w3-button"><img src="Resources/print.png" alt="printLogo" height="17" /> Print X-Ray/Pathology Bill</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-hide-small w3-right">
+                <button class="w3-button"><asp:Label ID="ckUser" Text="Hi Guest" runat="server"></asp:Label></button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4 w3-left" style="right:0">
+                    <a href="mycollection.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/payments.png" alt="changeLogo" height="17" /> My Collection</a>
+                    <a href="changePassword.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/changePass.png" alt="changeLogo" height="17" /> Change Password</a>
+                    <a href="logout.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/logout.png" alt="logoutLogo" height="17" /> Log Out</a>
+                </div>
+            </div>
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="myUserFunction()">&#9776;</a>
+        </div>
+        <div id="demoUser" class="w3-bar-block w3-red w3-hide w3-hide-large w3-hide-medium" runat="server">
+          <a href="departmentlist.aspx" class="w3-bar-item w3-button"><img src="Resources/opdEntry.png" alt="opdLogo" height="17" /> OPD</a>
+          <a href="ipdregistration.aspx" class="w3-bar-item w3-button"><img src="Resources/ipdEntry.png" alt="ipdLogo" height="17" /> IPD</a>
+          <a href="discharge.aspx" class="w3-bar-item w3-button"><img src="Resources/discharge.png" alt="dischargeLogo" height="17" /> Discharge</a>
+        </div>
+
+        <div class="w3-bar greenish glossBar" id="index" runat="server">
+            <a href="login.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/login.png" alt="loginLogo" height="17" /> Login</a>
+        </div>
+        <script type="text/javascript">
+            function myFunction() {
+                var x = document.getElementById("demo");
+                if (x.className.indexOf("w3-show") == -1) {
+                    x.className += " w3-show";
+                } else {
+                    x.className = x.className.replace(" w3-show", "");
+                }
+            }
+
+            function myUserFunction() {
+                var x = document.getElementById("demoUser");
+                if (x.className.indexOf("w3-show") == -1) {
+                    x.className += " w3-show";
+                } else {
+                    x.className = x.className.replace(" w3-show", "");
+                }
+            }
+
+        </script>
+    </div>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+        <br /><br /><br /><br /><br /><br /><br /><div class="w3-hide-medium w3-hide-large"><br /><br /><br /><br /><br /><br /></div>
+        <br /><br /><br />
+       
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - MAIO - Application</p>
+            </footer>
+        </div>
+
+    </form>
+</body>
+</html>
