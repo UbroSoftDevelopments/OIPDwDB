@@ -42,7 +42,7 @@ namespace IOPD.DataManager
                     if (bldt.Rows.Count > 0)
                         continue;
                     else
-                        blta.Insert(bar.sno, date, comments, patientno, user);
+                        blta.InsertQuery(bar.sno, date, comments, patientno, user);
                 }
                 return "successfull";
             }

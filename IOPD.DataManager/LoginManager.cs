@@ -10,7 +10,7 @@ namespace IOPD.DataManager
 {
     public class LoginManager
     {
-        private static string loginpage = "Login.aspx", homepage = "OPDIPD/Home.aspx";
+        private static string loginpage = "Login.aspx", homepage = "Home.aspx";
         public static bool adminLoggedIn;
         public static bool userLoggedIn;
         public static string loggedInUser;

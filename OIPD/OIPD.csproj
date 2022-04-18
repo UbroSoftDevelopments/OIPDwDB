@@ -118,8 +118,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="OPDIPD\Home.aspx" />
-    <Content Include="OPDIPD\Web.config" />
+    <Content Include="Home.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Resources\addDepart.png" />
     <Content Include="Resources\addDoctor.png" />
@@ -314,11 +313,11 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="OPDIPD\Home.aspx.cs">
+    <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="OPDIPD\Home.aspx.designer.cs">
+    <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

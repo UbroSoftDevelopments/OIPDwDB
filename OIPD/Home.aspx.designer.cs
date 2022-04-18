@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OIPD.OPDIPD
+namespace OIPD
 {
 
 

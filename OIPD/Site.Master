@@ -197,7 +197,7 @@
         </div>
 
         <div class="w3-bar greenish glossBar" id="index" runat="server">
-            <a href="login.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/login.png" alt="loginLogo" height="17" /> Login</a>
+            <a href="Login.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/login.png" alt="loginLogo" height="17" /> Login</a>
         </div>
         <script type="text/javascript">
             function myFunction() {
