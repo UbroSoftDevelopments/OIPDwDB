@@ -99,28 +99,28 @@ namespace IOPD.DataManager
         {
             DataSet1TableAdapters.opdformTableAdapter dt = new DataSet1TableAdapters.opdformTableAdapter();
             DateTime today = System.DateTime.Now.AddHours(12.50); 
-            int patients = (int)dt.GetPatientCountByDate("" + today);
+            int patients = Convert.ToInt32(dt.GetPatientCountByDate(""+today));
             return patients;
         }
         public static int gettodaystotalipd()
         {
             DataSet1TableAdapters.ipdformTableAdapter dt = new DataSet1TableAdapters.ipdformTableAdapter();
             DateTime today = System.DateTime.Now.AddHours(12.50); ;
-            int patients = (int)dt.GetIpdCountByDate("" + today);
+            int patients = Convert.ToInt32(dt.GetIpdCountByDate(today));
             return patients;
         }
         public static int gettodaystotaldischarge()
         {
             DataSet1TableAdapters.dischargeTableAdapter dt = new DataSet1TableAdapters.dischargeTableAdapter();
             DateTime today = System.DateTime.Now.AddHours(12.50); ;
-            int patients = (int)dt.GetDischargeCountByDate("" + today);
+            int patients = Convert.ToInt32(dt.GetDischargeCountByDate(today));
             return patients;
         }
         public static int gettotalemptybeds()
         {
             DataSet1TableAdapters.bedmasterTableAdapter dt = new DataSet1TableAdapters.bedmasterTableAdapter();
             DateTime today = System.DateTime.Now;
-            int beds = (int)dt.GetEmptyBedsCount();
+            int beds = Convert.ToInt32(dt.GetEmptyBedsCount());
             return beds;
         }
         public static string getNewPatientIPNumber(DateTime dt)
@@ -131,7 +131,7 @@ namespace IOPD.DataManager
             //DateTime dt=System.DateTime.Now;
             //int count = (int)ota.GetPatientCountByDate(dt + "");
 
-            return "GLC/" + dt.Year + "/" + (dt.Month) + "/" + dt.Day + "/" + (ota.GetNewSno() + 1);
+            return "GLC/" + dt.Year + "/" + (dt.Month) + "/" + dt.Day + "/" + (ota.GetNewSno());
         }
         public static string getWardNameByBedNo(int sno)
         {
