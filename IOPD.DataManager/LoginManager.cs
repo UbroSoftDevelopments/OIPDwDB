@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.SessionState;
+using System.Web.UI.WebControls;
 
 namespace IOPD.DataManager
 {
@@ -21,7 +22,7 @@ namespace IOPD.DataManager
             return "GLC";
         }
 
-        public static string addNewUser(String userName, int userType, String password)
+        public static string addNewUser(String userName,  String password, int userType, Byte[] logo , String title, String subtitle, String bigtitle, String address)
         {
             try
             {
@@ -29,14 +30,16 @@ namespace IOPD.DataManager
                 DataSet1.siteusersDataTable sudt = suta.GetDataByUserName(userName);
                 if (sudt.Rows.Count != 0)
                     return "User Already Exists Change User Name";
-                suta.InsertQuery(userName, password, "active", userType);
+                suta.InsertUserDetail(userName, password, "active", userType, logo , title, subtitle, bigtitle, address);
                 return "Success";
+
             }
             catch (Exception ex)
             {
                 return "" + ex.Message;
             }
         }
+
 
         public static bool ProtectPage(HttpSessionState session, HttpResponse response)
         {

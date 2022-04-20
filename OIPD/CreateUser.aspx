@@ -26,6 +26,32 @@
 <asp:Label ID="lblRetypePassword" runat="server" CssClass="w3-col s5 w3-left w3-input w3-border-0"><b>Re-enter Password -: </b></asp:Label>
 <p class="w3-col s1"></p>
 <asp:TextBox ID="txtRetypePassword" runat="server" TextMode="Password" CssClass="w3-input w3-sand w3-card w3-col s6" placeholder="Re-type above password" />
+<br /><br />
+
+<asp:Label ID="Label1" runat="server" CssClass="w3-col s5 w3-left w3-input w3-border-0"><b>Choose Logo -: </b></asp:Label>
+<p class="w3-col s1"></p>
+<asp:FileUpload ID="FileUpload1" runat="server" CssClass="w3-col s5 w3-left w3-input w3-border-0" required="true"/>
+
+<br /><br />
+<asp:Label ID="Label2" runat="server" CssClass="w3-col s5 w3-left w3-input w3-border-0"><b>Title Name -: </b></asp:Label>
+<p class="w3-col s1"></p>
+<asp:TextBox ID="txtTitlename" runat="server" CssClass="w3-input w3-sand w3-card w3-col s6" placeholder="Enter Title Name" />
+<br /><br />
+
+<asp:Label ID="Label3" runat="server" CssClass="w3-col s5 w3-left w3-input w3-border-0"><b>Sub Title Name -: </b></asp:Label>
+<p class="w3-col s1"></p>
+<asp:TextBox ID="txtSubTitle" runat="server" CssClass="w3-input w3-sand w3-card w3-col s6" placeholder="Enter Sub Title Name" />
+<br /><br />
+
+<asp:Label ID="Label4" runat="server" CssClass="w3-col s5 w3-left w3-input w3-border-0"><b>Big Title Name -: </b></asp:Label>
+<p class="w3-col s1"></p>
+<asp:TextBox ID="txtBigTitle" runat="server" CssClass="w3-input w3-sand w3-card w3-col s6" placeholder="Enter Big Title Name" />
+<br /><br />
+
+<asp:Label ID="Label5" runat="server" CssClass="w3-col s5 w3-left w3-input w3-border-0"><b>Address -: </b></asp:Label>
+<p class="w3-col s1"></p>
+<asp:TextBox ID="txtAddress" runat="server" CssClass="w3-input w3-sand w3-card w3-col s6" placeholder="Enter Address" />
+<br /><br/>
 </div>
 <br /><br /><br />
 <asp:Button ID="btnregister" CssClass=" w3-round-xxlarge w3-btn w3-purple"  runat="server" Text="Add User" OnClick="addUser" />
@@ -44,6 +70,10 @@
         <asp:BoundField DataField="password" HeaderText="password" SortExpression="password" />
         <asp:BoundField DataField="status" HeaderText="status" SortExpression="status" />
         <asp:BoundField DataField="usertype" HeaderText="usertype" SortExpression="usertype" />
+        <asp:BoundField DataField="apptitle" HeaderText="apptitle" SortExpression="apptitle" />
+        <asp:BoundField DataField="appsubtitle" HeaderText="appsubtitle" SortExpression="appsubtitle" />
+        <asp:BoundField DataField="appbigtitle" HeaderText="appbigtitle" SortExpression="appbigtitle" />
+        <asp:BoundField DataField="appaddress" HeaderText="appaddress" SortExpression="appaddress" />
     </Columns>
     <EditRowStyle BackColor="#2461BF" />
     <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -59,7 +89,7 @@
 
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
         ConnectionString="<%$ ConnectionStrings:IODatabaseConnectionString %>" 
-        SelectCommand="SELECT userno, username, password, status, usertype FROM hospitals.siteusers WHERE (username &lt;&gt; @username) AND (username &lt;&gt; 'admin')">
+        SelectCommand="SELECT userno, username, password, status, usertype, applogo, apptitle, appsubtitle, appbigtitle, appaddress FROM hospitals.siteusers WHERE (username &lt;&gt; @username) AND (username &lt;&gt; 'admin')">
         <SelectParameters>
             <asp:SessionParameter DefaultValue=" " Name="username" SessionField="username" Type="String" />
         </SelectParameters>

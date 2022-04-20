@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -58,11 +59,43 @@ namespace OIPD
                 lblErrors.Text = "Re-type your password";
                 return;
             }
+            if (txtTitlename.Text.Equals(""))
+            {
+                lblErrors.Text = "Enter Title";
+                return;
+            }
+            if (txtSubTitle.Text.Equals(""))
+            {
+                lblErrors.Text = "Enter Sub Title";
+                return;
+            }
+            if (txtBigTitle.Text.Equals(""))
+            {
+                lblErrors.Text = "Enter Big Title";
+                return;
+            }
+            if (txtAddress.Text.Equals(""))
+            {
+                lblErrors.Text = "Enter Address";
+                return;
+            }
 
             String uName = txtUserName.Text;
             String pass = txtPassword.Text;
             String rePass = txtRetypePassword.Text;
             int userType = Convert.ToInt32("" + drpdwnUserType.SelectedValue);
+            String title = txtTitlename.Text;
+            String subtitle = txtSubTitle.Text;
+            String bigtitle = txtBigTitle.Text;
+            String address = txtAddress.Text;
+
+            Byte[] bytes;
+            using (BinaryReader br = new BinaryReader(FileUpload1.PostedFile.InputStream)) 
+            {
+                bytes = br.ReadBytes(FileUpload1.PostedFile.ContentLength);
+            }
+           
+            string base64ImageRepresentation = Convert.ToBase64String(FileUpload1.FileBytes);
 
             if (!pass.Equals(rePass))
             {
@@ -71,7 +104,7 @@ namespace OIPD
                 return;
             }
 
-            String res = LoginManager.addNewUser(uName, userType, pass);
+            String res = LoginManager.addNewUser(uName, pass, userType, bytes , title, subtitle, bigtitle, address);
             if (res.Equals("Success"))
                 Response.Redirect("home.aspx");
             else
@@ -79,6 +112,7 @@ namespace OIPD
             GridView1.DataBind();
         }
 
+      
         public void changeStatus(object sender, EventArgs e)
         {
             Button b = (Button)sender;

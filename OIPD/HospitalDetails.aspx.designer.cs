@@ -11,214 +11,178 @@ namespace OIPD
 {
 
 
-    public partial class CreateUser
+    public partial class HospitalDetails
     {
 
         /// <summary>
-        /// lblUserDetails control.
+        /// lblmsg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUserDetails;
+        protected global::System.Web.UI.WebControls.Label lblmsg;
 
         /// <summary>
-        /// lblErrors control.
+        /// btnOPDPatientDetails control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblErrors;
+        protected global::System.Web.UI.WebControls.LinkButton btnOPDPatientDetails;
 
         /// <summary>
-        /// lblUserName control.
+        /// patientOPDDiv control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUserName;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl patientOPDDiv;
 
         /// <summary>
-        /// txtUserName control.
+        /// rdoListTime1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUserName;
+        protected global::System.Web.UI.WebControls.RadioButtonList rdoListTime1;
 
         /// <summary>
-        /// lblUserType control.
+        /// lblOPDGeetanjaliPatients control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUserType;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblOPDGeetanjaliPatients;
 
         /// <summary>
-        /// drpdwnUserType control.
+        /// lblOPDAyushmanPatients control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpdwnUserType;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblOPDAyushmanPatients;
 
         /// <summary>
-        /// lblUserPassword control.
+        /// lblOPDCashlessPatients control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUserPassword;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblOPDCashlessPatients;
 
         /// <summary>
-        /// txtPassword control.
+        /// btnIPDPatientDetails control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPassword;
+        protected global::System.Web.UI.WebControls.LinkButton btnIPDPatientDetails;
 
         /// <summary>
-        /// lblRetypePassword control.
+        /// patientIPDDiv control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblRetypePassword;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl patientIPDDiv;
 
         /// <summary>
-        /// txtRetypePassword control.
+        /// rdoListTime2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRetypePassword;
+        protected global::System.Web.UI.WebControls.RadioButtonList rdoListTime2;
 
         /// <summary>
-        /// Label1 control.
+        /// lblIPDGeetanjaliPatients control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblIPDGeetanjaliPatients;
 
         /// <summary>
-        /// FileUpload1 control.
+        /// lblIPDAyushmanPatients control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblIPDAyushmanPatients;
 
         /// <summary>
-        /// Label2 control.
+        /// lblIPDCashlessPatients control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblIPDCashlessPatients;
 
         /// <summary>
-        /// txtTitlename control.
+        /// btnDisPatientDetails control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTitlename;
+        protected global::System.Web.UI.WebControls.LinkButton btnDisPatientDetails;
 
         /// <summary>
-        /// Label3 control.
+        /// patientDisDiv control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl patientDisDiv;
 
         /// <summary>
-        /// txtSubTitle control.
+        /// rdoListTime3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSubTitle;
+        protected global::System.Web.UI.WebControls.RadioButtonList rdoListTime3;
 
         /// <summary>
-        /// Label4 control.
+        /// lblDisGeetanjaliPatients control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblDisGeetanjaliPatients;
 
         /// <summary>
-        /// txtBigTitle control.
+        /// lblDisAyushmanPatients control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBigTitle;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblDisAyushmanPatients;
 
         /// <summary>
-        /// Label5 control.
+        /// lblDisCashlessPatients control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
-
-        /// <summary>
-        /// txtAddress control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAddress;
-
-        /// <summary>
-        /// btnregister control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnregister;
-
-        /// <summary>
-        /// GridView1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
-
-        /// <summary>
-        /// SqlDataSource1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblDisCashlessPatients;
     }
 }
