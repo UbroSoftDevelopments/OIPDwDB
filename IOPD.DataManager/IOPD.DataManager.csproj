@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="bedUtilities.cs" />
+    <Compile Include="chargesUtilities.cs" />
     <Compile Include="DataSet1.cs">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
@@ -53,6 +54,7 @@
     </Compile>
     <Compile Include="DateUtilities.cs" />
     <Compile Include="DepartmentValidation.cs" />
+    <Compile Include="expenses.cs" />
     <Compile Include="LoginManager.cs" />
     <Compile Include="Patient.cs" />
     <Compile Include="PatientUtilities.cs" />
