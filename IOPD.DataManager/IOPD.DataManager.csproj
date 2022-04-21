@@ -51,6 +51,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DateUtilities.cs" />
     <Compile Include="DepartmentValidation.cs" />
     <Compile Include="LoginManager.cs" />
     <Compile Include="Patient.cs" />

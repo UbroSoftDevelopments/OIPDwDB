@@ -125,6 +125,7 @@
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
     <Content Include="HospitalDetails.aspx" />
+    <Content Include="HospitalSummary.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
     <Content Include="RefferalHospitals.aspx" />
@@ -359,6 +360,13 @@
     </Compile>
     <Compile Include="HospitalDetails.aspx.designer.cs">
       <DependentUpon>HospitalDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HospitalSummary.aspx.cs">
+      <DependentUpon>HospitalSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HospitalSummary.aspx.designer.cs">
+      <DependentUpon>HospitalSummary.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
