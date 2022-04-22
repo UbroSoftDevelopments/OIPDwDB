@@ -64,6 +64,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="RegistrationUtilities.cs" />
     <Compile Include="userUtils.cs" />
     <Compile Include="Validation.cs" />
   </ItemGroup>
