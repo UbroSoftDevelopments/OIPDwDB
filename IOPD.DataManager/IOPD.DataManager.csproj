@@ -53,6 +53,7 @@
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="DateUtilities.cs" />
+    <Compile Include="departmentlist.cs" />
     <Compile Include="DepartmentValidation.cs" />
     <Compile Include="expenses.cs" />
     <Compile Include="LoginManager.cs" />

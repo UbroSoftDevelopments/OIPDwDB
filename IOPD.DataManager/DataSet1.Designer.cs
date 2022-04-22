@@ -23726,7 +23726,7 @@ FROM            hospitals.fieldAgents";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[6];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[7];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        patientno, departmentno, dateofentry, firstname, lastname, agemonths, ageyears, gender, address, fathername, referredfrom, mobileno, title, doctorno, currentuser, nextrenewdate, totalrenews, agedays, patienttype, ipnumber, 
@@ -23762,11 +23762,37 @@ WHERE  (dateofentry >= @fromdate) AND (dateofentry <= @todate)";
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateofentry", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "dateofentry", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "UPDATE       hospitals.opdform\r\nSET                departmentno = @departmentno\r\n" +
-                "WHERE        (patientno = @patientno)";
+            this._commandCollection[5].CommandText = @"INSERT INTO hospitals.opdform
+                         (departmentno, dateofentry, firstname, lastname, agemonths, ageyears, gender, address, fathername, referredfrom, mobileno, title, doctorno, currentuser, nextrenewdate, totalrenews, agedays, patienttype, ipnumber, patientdata)
+VALUES        (@departmentno,@dateofentry,@firstname,@lastname,@agemonths,@ageyears,@gender,@address,@fathername,@referredfrom,@mobileno,@title,@doctorno,@currentuser,@nextrenewdate,@totalrenews,@agedays,@patienttype,@ipnumber,@patientdata)";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@departmentno", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "departmentno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@patientno", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "patientno", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateofentry", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "dateofentry", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@firstname", global::System.Data.SqlDbType.VarChar, 500, global::System.Data.ParameterDirection.Input, 0, 0, "firstname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@lastname", global::System.Data.SqlDbType.VarChar, 500, global::System.Data.ParameterDirection.Input, 0, 0, "lastname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@agemonths", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "agemonths", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ageyears", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ageyears", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@gender", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "gender", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@address", global::System.Data.SqlDbType.VarChar, 1000, global::System.Data.ParameterDirection.Input, 0, 0, "address", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fathername", global::System.Data.SqlDbType.VarChar, 500, global::System.Data.ParameterDirection.Input, 0, 0, "fathername", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@referredfrom", global::System.Data.SqlDbType.VarChar, 500, global::System.Data.ParameterDirection.Input, 0, 0, "referredfrom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@mobileno", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "mobileno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@title", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "title", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@doctorno", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "doctorno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@currentuser", global::System.Data.SqlDbType.VarChar, 500, global::System.Data.ParameterDirection.Input, 0, 0, "currentuser", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nextrenewdate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "nextrenewdate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@totalrenews", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "totalrenews", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@agedays", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "agedays", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@patienttype", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "patienttype", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ipnumber", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "ipnumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@patientdata", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "patientdata", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = "UPDATE       hospitals.opdform\r\nSET                departmentno = @departmentno\r\n" +
+                "WHERE        (patientno = @patientno)";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@departmentno", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "departmentno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@patientno", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "patientno", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -23873,9 +23899,127 @@ WHERE  (dateofentry >= @fromdate) AND (dateofentry <= @todate)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertQuery(
+                    int departmentno, 
+                    System.DateTime dateofentry, 
+                    string firstname, 
+                    string lastname, 
+                    int agemonths, 
+                    int ageyears, 
+                    string gender, 
+                    string address, 
+                    string fathername, 
+                    string referredfrom, 
+                    string mobileno, 
+                    string title, 
+                    string doctorno, 
+                    string currentuser, 
+                    System.DateTime nextrenewdate, 
+                    int totalrenews, 
+                    int agedays, 
+                    int patienttype, 
+                    string ipnumber, 
+                    int patientdata) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
+            command.Parameters[0].Value = ((int)(departmentno));
+            command.Parameters[1].Value = ((System.DateTime)(dateofentry));
+            if ((firstname == null)) {
+                throw new global::System.ArgumentNullException("firstname");
+            }
+            else {
+                command.Parameters[2].Value = ((string)(firstname));
+            }
+            if ((lastname == null)) {
+                throw new global::System.ArgumentNullException("lastname");
+            }
+            else {
+                command.Parameters[3].Value = ((string)(lastname));
+            }
+            command.Parameters[4].Value = ((int)(agemonths));
+            command.Parameters[5].Value = ((int)(ageyears));
+            if ((gender == null)) {
+                throw new global::System.ArgumentNullException("gender");
+            }
+            else {
+                command.Parameters[6].Value = ((string)(gender));
+            }
+            if ((address == null)) {
+                throw new global::System.ArgumentNullException("address");
+            }
+            else {
+                command.Parameters[7].Value = ((string)(address));
+            }
+            if ((fathername == null)) {
+                throw new global::System.ArgumentNullException("fathername");
+            }
+            else {
+                command.Parameters[8].Value = ((string)(fathername));
+            }
+            if ((referredfrom == null)) {
+                throw new global::System.ArgumentNullException("referredfrom");
+            }
+            else {
+                command.Parameters[9].Value = ((string)(referredfrom));
+            }
+            if ((mobileno == null)) {
+                throw new global::System.ArgumentNullException("mobileno");
+            }
+            else {
+                command.Parameters[10].Value = ((string)(mobileno));
+            }
+            if ((title == null)) {
+                throw new global::System.ArgumentNullException("title");
+            }
+            else {
+                command.Parameters[11].Value = ((string)(title));
+            }
+            if ((doctorno == null)) {
+                throw new global::System.ArgumentNullException("doctorno");
+            }
+            else {
+                command.Parameters[12].Value = ((string)(doctorno));
+            }
+            if ((currentuser == null)) {
+                throw new global::System.ArgumentNullException("currentuser");
+            }
+            else {
+                command.Parameters[13].Value = ((string)(currentuser));
+            }
+            command.Parameters[14].Value = ((System.DateTime)(nextrenewdate));
+            command.Parameters[15].Value = ((int)(totalrenews));
+            command.Parameters[16].Value = ((int)(agedays));
+            command.Parameters[17].Value = ((int)(patienttype));
+            if ((ipnumber == null)) {
+                throw new global::System.ArgumentNullException("ipnumber");
+            }
+            else {
+                command.Parameters[18].Value = ((string)(ipnumber));
+            }
+            command.Parameters[19].Value = ((int)(patientdata));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateDepartmentByPatientNo(int departmentno, int patientno) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
             command.Parameters[0].Value = ((int)(departmentno));
             command.Parameters[1].Value = ((int)(patientno));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
@@ -24716,7 +24860,7 @@ WHERE  (dateofentry >= @fromdate) AND (dateofentry <= @todate)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        sno, patientno, dateofpayment, amount, comments, paymentmode, payme" +
@@ -24728,6 +24872,21 @@ WHERE  (dateofentry >= @fromdate) AND (dateofentry <= @todate)";
                 " currentuser\r\nFROM     hospitals.payments\r\nWHERE  (patientno = @patientno)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@patientno", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "patientno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "INSERT INTO hospitals.payments\r\n                         (sno, patientno, dateofp" +
+                "ayment, amount, comments, paymentmode, paymentdata, currentuser)\r\nVALUES        " +
+                "(@sno,@patientno,@dateofpayment,@amount,@comments,@paymentmode,@paymentdata,@cur" +
+                "rentuser)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sno", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "sno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@patientno", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "patientno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateofpayment", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "dateofpayment", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@amount", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@comments", global::System.Data.SqlDbType.VarChar, 1000, global::System.Data.ParameterDirection.Input, 0, 0, "comments", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@paymentmode", global::System.Data.SqlDbType.VarChar, 500, global::System.Data.ParameterDirection.Input, 0, 0, "paymentmode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@paymentdata", global::System.Data.SqlDbType.VarChar, 500, global::System.Data.ParameterDirection.Input, 0, 0, "paymentdata", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@currentuser", global::System.Data.SqlDbType.VarChar, 500, global::System.Data.ParameterDirection.Input, 0, 0, "currentuser", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -24793,6 +24952,57 @@ WHERE  (dateofentry >= @fromdate) AND (dateofentry <= @todate)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(global::System.Data.DataRow[] dataRows) {
             return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertQuery(int sno, int patientno, System.DateTime dateofpayment, int amount, string comments, string paymentmode, string paymentdata, string currentuser) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            command.Parameters[0].Value = ((int)(sno));
+            command.Parameters[1].Value = ((int)(patientno));
+            command.Parameters[2].Value = ((System.DateTime)(dateofpayment));
+            command.Parameters[3].Value = ((int)(amount));
+            if ((comments == null)) {
+                throw new global::System.ArgumentNullException("comments");
+            }
+            else {
+                command.Parameters[4].Value = ((string)(comments));
+            }
+            if ((paymentmode == null)) {
+                throw new global::System.ArgumentNullException("paymentmode");
+            }
+            else {
+                command.Parameters[5].Value = ((string)(paymentmode));
+            }
+            if ((paymentdata == null)) {
+                throw new global::System.ArgumentNullException("paymentdata");
+            }
+            else {
+                command.Parameters[6].Value = ((string)(paymentdata));
+            }
+            if ((currentuser == null)) {
+                throw new global::System.ArgumentNullException("currentuser");
+            }
+            else {
+                command.Parameters[7].Value = ((string)(currentuser));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     
