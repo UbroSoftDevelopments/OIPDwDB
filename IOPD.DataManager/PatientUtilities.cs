@@ -131,9 +131,11 @@ namespace IOPD.DataManager
             //DataSet1.opdformDataTable odt=ota.GetData();
             //DataSet1.opdformRow or=(DataSet1.opdformRow)odt.Rows[odt.Rows.Count-1];
             //DateTime dt=System.DateTime.Now;
-            //int count = (int)ota.GetPatientCountByDate(dt + "");
-            return "GLC/" + dt.Year + "/" + (dt.Month) + "/" + dt.Day + "/" + (ota.GetNewSno() + 1) ;
             
+            int a = 88;
+            return "GLC/" + dt.Year + "/" + (dt.Month) + "/" + dt.Day + "/" + ((int)ota.GetNewSnoWithIncreament() + 1);
+           // return kk;
+            //Convert.ToInt32(da.GetNewSnoWithIncreament())
         }
       
         public static string getWardNameByBedNo(int sno)

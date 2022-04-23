@@ -39,11 +39,11 @@ namespace OIPD
                 DataSet1.departmentsRow dr = (DataSet1.departmentsRow)dt.Rows[0];
                 consultdepart = dr.departname;
                 lbldepart.Text = "" + consultdepart;
-                ipNumber.Text = PatientUtilities.getNewPatientIPNumber(System.DateTime.Now.AddHours(12.5));
+                ipNumber.Text = PatientUtilities.getNewPatientIPNumber(DateTime.Now/*.AddHours(12.5)*/);
             }
-            catch
+            catch(Exception uu)
             {
-
+                
                 Response.Redirect("departmentlist.aspx");
             }
         }
@@ -195,7 +195,7 @@ namespace OIPD
                 {
                     IOPD.DataManager.DataSet1TableAdapters.opdformTableAdapter da = new IOPD.DataManager.DataSet1TableAdapters.opdformTableAdapter();
                     da.InsertQuery(number, date, firstname, lastname, agemonths, ageyears, gen, address, fathername, refference, mobileno, title, doctorNo, LoginManager.CurrentUser(Session), (date.AddDays(15)), 0, agedays, patientType, ipNumber.Text + "", tpanumber);
-                    sno = Convert.ToInt32(da.GetNewSno());
+                    sno = Convert.ToInt32(da.GetNewSnoWithIncreament());
                 }
                 {
                     if (patientType != 2)
