@@ -14,10 +14,11 @@ namespace OIPD
         int number;
         protected void Page_Load(object sender, EventArgs e)
         {
-            try
+            try 
             {
+                bool b = LoginManager.ProtectPage(Session, Response);            
                 message.Text = "";
-                bool b = LoginManager.ProtectPage(Session, Response);
+
                 if (!b)
                     return;
                 if (!this.IsPostBack)
@@ -32,7 +33,7 @@ namespace OIPD
                 number = Convert.ToInt32(Request.QueryString["departmentno"]);
                 DepartmentValidation depart = new DepartmentValidation(number);
                 if (!depart.Valid)
-                    throw new Exception();
+                throw new Exception();
                 IOPD.DataManager.DataSet1TableAdapters.departmentsTableAdapter da = new IOPD.DataManager.DataSet1TableAdapters.departmentsTableAdapter();
                 DataSet1.departmentsDataTable dt = da.GetDataBy(number);
                 DataSet1.departmentsRow dr = (DataSet1.departmentsRow)dt.Rows[0];
@@ -202,7 +203,7 @@ namespace OIPD
                         IOPD.DataManager.DataSet1TableAdapters.expensesTableAdapter da = new IOPD.DataManager.DataSet1TableAdapters.expensesTableAdapter();
                         da.InsertQuery(date, totalamount, "Registration Fees", sno, LoginManager.CurrentUser(Session));
                         IOPD.DataManager.DataSet1TableAdapters.paymentsTableAdapter pa = new IOPD.DataManager.DataSet1TableAdapters.paymentsTableAdapter();
-                        pa.InsertQuery(sno, date, totalamount, "Registration Fees", "Cash", "None", LoginManager.CurrentUser(Session).ToString());
+                        pa.InsertPayment(sno, date, totalamount, "Registration Fees", "Cash", "None", LoginManager.CurrentUser(Session).ToString());
                     }
                 }
 
@@ -336,7 +337,7 @@ namespace OIPD
                 return;
             }
             IOPD.DataManager.DataSet1TableAdapters.tpaTableAdapter tta = new IOPD.DataManager.DataSet1TableAdapters.tpaTableAdapter();
-            tta.Insert(txtTpaName.Text + "");
+            tta.Insert1(txtTpaName.Text + "");
             drpdwntpalist.DataBind();
         }
         protected void rdoLst_Click(object sender, EventArgs e)

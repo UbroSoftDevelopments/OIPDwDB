@@ -31,13 +31,17 @@
             runat="server" DataSourceID="SqlDataSource1" DataTextField="type_of_patient" DataValueField="sno" 
             RepeatDirection="Horizontal" Width="100%" AutoPostBack="True" 
             onselectedindexchanged="rdoLst_Click"></asp:RadioButtonList>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString1 %>" SelectCommand="SELECT * FROM [patient_type]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+            ConnectionString="<%$ ConnectionStrings:IODatabaseConnectionString %>" 
+            SelectCommand="SELECT * FROM hospitals.patient_type"></asp:SqlDataSource>
         <br />
     </div>
     <div id="tpaList" runat="server" class="w3-padding" visible="false">
         <asp:DropDownList ID="drpdwntpalist" runat="server" CssClass="w3-input w3-sand w3-border w3-round w3-col s4" DataSourceID="SqlDataSource3" DataTextField="tpaname" DataValueField="sno">
         </asp:DropDownList>
-        <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString1 %>" SelectCommand="SELECT * FROM [tpa] ORDER BY [sno],[tpaname]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource3" runat="server"
+            ConnectionString="<%$ ConnectionStrings:IODatabaseConnectionString %>" 
+            SelectCommand="SELECT * FROM hospitals.tpa ORDER BY [sno],[tpaname]"></asp:SqlDataSource>
         <div class="w3-col s4">&nbsp;</div>
         <div class="w3-center w3-col s4">
             <div class="w3-round-xxlarge w3-btn w3-purple" onclick="displayModal()"> ADD TPA </div>
@@ -110,8 +114,8 @@
             onselectedindexchanged="drpdwnHospital_SelectedIndexChanged" AutoPostBack="true" TabIndex="12">
         </asp:DropDownList>
         <asp:SqlDataSource ID="SqlDataSource2" runat="server" 
-            ConnectionString="<%$ ConnectionStrings:ConnectionString1 %>" 
-            SelectCommand="SELECT * FROM [refferHospitals]"></asp:SqlDataSource>
+            ConnectionString="<%$ ConnectionStrings:IODatabaseConnectionString %>" 
+            SelectCommand="SELECT * FROM hospitals.refferHospitals"></asp:SqlDataSource>
         
         <asp:TextBox CssClass=" w3-round w3-sand w3-input w3-border" Width="100%" placeholder="Enter Doctor's Name" ID="txtreffered" runat="server" TabIndex="10"></asp:TextBox>
 

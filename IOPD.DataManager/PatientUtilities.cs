@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -123,6 +124,7 @@ namespace IOPD.DataManager
             int beds = Convert.ToInt32(dt.GetEmptyBedsCount());
             return beds;
         }
+        
         public static string getNewPatientIPNumber(DateTime dt)
         {
             DataSet1TableAdapters.opdformTableAdapter ota = new DataSet1TableAdapters.opdformTableAdapter();
@@ -130,9 +132,10 @@ namespace IOPD.DataManager
             //DataSet1.opdformRow or=(DataSet1.opdformRow)odt.Rows[odt.Rows.Count-1];
             //DateTime dt=System.DateTime.Now;
             //int count = (int)ota.GetPatientCountByDate(dt + "");
-
-            return "GLC/" + dt.Year + "/" + (dt.Month) + "/" + dt.Day + "/" + (ota.GetNewSno());
+            return "GLC/" + dt.Year + "/" + (dt.Month) + "/" + dt.Day + "/" + (ota.GetNewSno() + 1) ;
+            
         }
+      
         public static string getWardNameByBedNo(int sno)
         {
             DataSet1TableAdapters.bedmasterTableAdapter bmta = new DataSet1TableAdapters.bedmasterTableAdapter();

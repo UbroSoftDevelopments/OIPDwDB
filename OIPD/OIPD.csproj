@@ -130,7 +130,15 @@
     <Content Include="IpdPatientsList.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
+    <Content Include="Opdform.aspx" />
     <Content Include="OpdPatientsList.aspx" />
+    <Content Include="pad.aspx" />
+    <Content Include="patientData.aspx" />
+    <Content Include="prescription.aspx" />
+    <Content Include="PrescriptionList.aspx" />
+    <Content Include="PrintPad.aspx" />
+    <Content Include="printPaymentBill.aspx" />
+    <Content Include="printReceiptList.aspx" />
     <Content Include="RefferalHospitals.aspx" />
     <Content Include="Resources\addDepart.png" />
     <Content Include="Resources\addDoctor.png" />
@@ -288,6 +296,7 @@
     <Content Include="Scripts\WebForms\WebForms.js" />
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="searchPatient.aspx" />
     <Content Include="Site.Master" />
     <Content Include="ViewDues.aspx" />
     <Content Include="ViewSwitcher.ascx" />
@@ -407,12 +416,68 @@
     <Compile Include="Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Opdform.aspx.cs">
+      <DependentUpon>Opdform.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Opdform.aspx.designer.cs">
+      <DependentUpon>Opdform.aspx</DependentUpon>
+    </Compile>
     <Compile Include="OpdPatientsList.aspx.cs">
       <DependentUpon>OpdPatientsList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="OpdPatientsList.aspx.designer.cs">
       <DependentUpon>OpdPatientsList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pad.aspx.cs">
+      <DependentUpon>pad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pad.aspx.designer.cs">
+      <DependentUpon>pad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="patientData.aspx.cs">
+      <DependentUpon>patientData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="patientData.aspx.designer.cs">
+      <DependentUpon>patientData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="prescription.aspx.cs">
+      <DependentUpon>prescription.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="prescription.aspx.designer.cs">
+      <DependentUpon>prescription.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrescriptionList.aspx.cs">
+      <DependentUpon>PrescriptionList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrescriptionList.aspx.designer.cs">
+      <DependentUpon>PrescriptionList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrintPad.aspx.cs">
+      <DependentUpon>PrintPad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrintPad.aspx.designer.cs">
+      <DependentUpon>PrintPad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="printPaymentBill.aspx.cs">
+      <DependentUpon>printPaymentBill.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="printPaymentBill.aspx.designer.cs">
+      <DependentUpon>printPaymentBill.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="printReceiptList.aspx.cs">
+      <DependentUpon>printReceiptList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="printReceiptList.aspx.designer.cs">
+      <DependentUpon>printReceiptList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RefferalHospitals.aspx.cs">
@@ -421,6 +486,13 @@
     </Compile>
     <Compile Include="RefferalHospitals.aspx.designer.cs">
       <DependentUpon>RefferalHospitals.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="searchPatient.aspx.cs">
+      <DependentUpon>searchPatient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="searchPatient.aspx.designer.cs">
+      <DependentUpon>searchPatient.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>

@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="departmentlist.aspx.cs" Inherits="OIPD.departmentlist" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <br /><br />
+   <br /><br />
 <div class="w3-row">
 <div class="w3-col s2"><br /></div>
 <div   class="w3-col s8 w3-center  w3-centered w3-light-blue w3-card-4">
@@ -22,11 +22,12 @@
         <AlternatingRowStyle BackColor="#F7F7F7" />
         <Columns>
            
-            <asp:BoundField DataField="departmentno" HeaderText="departmentno" 
-                SortExpression="departmentno" InsertVisible="False" ReadOnly="True" />
+            <asp:BoundField DataField="departname" HeaderText="Department Name" 
+                SortExpression="departname" />
             
-                 <asp:BoundField DataField="departname" HeaderText="departname" SortExpression="departname" />
-            <asp:BoundField DataField="description" HeaderText="description" SortExpression="description" />
+                 <asp:TemplateField HeaderText="Select Department">
+          <ItemTemplate><a title='Select<%# Eval("departmentno") %>'href='Opdform.aspx?departmentno=<%# Eval("departmentno") %>'>Select <%# Eval("departname") %></a></ItemTemplate>
+          </asp:TemplateField>
         </Columns>
         <FooterStyle BackColor="#B5C7DE" ForeColor="#4A3C8C" />
         <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#F7F7F7" />
@@ -41,10 +42,9 @@
     </asp:GridView>
        <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
            ConnectionString="<%$ ConnectionStrings:IODatabaseConnectionString %>" 
-           SelectCommand="SELECT departmentno, departname, description FROM hospitals.departments WHERE (departmentno > 1) ORDER BY departmentno">
+           SelectCommand="SELECT * FROM hospitals.departments where departmentno>1 ORDER BY [departmentno]">
        </asp:SqlDataSource>
     </div>
     </div>
     <br /><br /><br /><br /><br /><br />
-
 </asp:Content>
