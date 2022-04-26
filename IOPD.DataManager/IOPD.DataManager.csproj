@@ -55,6 +55,7 @@
     <Compile Include="DateUtilities.cs" />
     <Compile Include="departmentlist.cs" />
     <Compile Include="DepartmentValidation.cs" />
+    <Compile Include="dischargeUtilities.cs" />
     <Compile Include="expenses.cs" />
     <Compile Include="LoginManager.cs" />
     <Compile Include="Patient.cs" />
