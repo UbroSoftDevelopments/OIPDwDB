@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -57,6 +58,8 @@
     <Compile Include="DepartmentValidation.cs" />
     <Compile Include="dischargeUtilities.cs" />
     <Compile Include="expenses.cs" />
+    <Compile Include="filterUtils.cs" />
+    <Compile Include="imgUtilities.cs" />
     <Compile Include="LoginManager.cs" />
     <Compile Include="Patient.cs" />
     <Compile Include="PatientUtilities.cs" />
@@ -67,8 +70,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="RegistrationUtilities.cs" />
+    <Compile Include="RoomName.cs" />
+    <Compile Include="RoomTypeName.cs" />
+    <Compile Include="RoomUtilities.cs" />
     <Compile Include="userUtils.cs" />
     <Compile Include="Validation.cs" />
+    <Compile Include="xraypathUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

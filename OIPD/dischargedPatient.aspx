@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="searchPatient.aspx.cs" Inherits="OIPD.searchPatient" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="dischargedPatient.aspx.cs" Inherits="OIPD.dischargedPatient" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <br />
 <div class=" w3-container w3-card-4 w3-padding w3-center w3-centered w3-border w3-border-teal">
@@ -28,41 +28,25 @@
         ForeColor="#333333" GridLines="None">
         <AlternatingRowStyle BackColor="White" />
         <Columns>
-                <asp:TemplateField HeaderText="Patient No">
-                <ItemTemplate>
-                <%# IOPD.DataManager.RegistrationUtilities.GetRegistrationNo(Convert.ToInt32(Eval("patientno"))) %>
-                
-                </ItemTemplate>
-                </asp:TemplateField>
-           
-
-                    <asp:TemplateField HeaderText="Department">
-                <ItemTemplate>
-                <%# IOPD.DataManager.DepartmentValidation.GetDepartmentNameByDepartmentNo(Eval("departmentno"))%>
-                </ItemTemplate>
-                </asp:TemplateField>
-
-
-                <asp:TemplateField HeaderText="Date of Entry">
-                <ItemTemplate>
-                <%# IOPD.DataManager.DateUtilities.dateFormat(Eval("dateofentry"))%>
-                </ItemTemplate>
-                </asp:TemplateField>
-       
-            <asp:BoundField DataField="firstname" HeaderText="First Name" 
-                SortExpression="firstname" />
-            <asp:BoundField DataField="lastname" HeaderText="Last Name" 
-                SortExpression="lastname" />
-                  <asp:BoundField DataField="ageyears" HeaderText="Years" 
-                SortExpression="ageyears" />
-            <asp:BoundField DataField="agemonths" HeaderText="Months" 
-                SortExpression="agemonths" />
-          <asp:TemplateField HeaderText="Action">
-          <ItemTemplate>
-          <a href="patientData.aspx?patientno=<%# Eval("patientno") %>" >Details</a>
-          </ItemTemplate>
-          </asp:TemplateField>
-          
+            <asp:TemplateField HeaderText="Patient No">
+                <ItemTemplate><%# IOPD.DataManager.RegistrationUtilities.GetRegistrationNo(Convert.ToInt32(Eval("patientno"))) %></ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Department">
+                <ItemTemplate><%# IOPD.DataManager.DepartmentValidation.GetDepartmentNameByDepartmentNo(Eval("departmentno"))%></ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Date of Entry">
+                <ItemTemplate><%# IOPD.DataManager.DateUtilities.dateFormat(Eval("dateofentry"))%></ItemTemplate>
+            </asp:TemplateField>
+            <asp:BoundField DataField="firstname" HeaderText="First Name" SortExpression="firstname" />
+            <asp:BoundField DataField="lastname" HeaderText="Last Name" SortExpression="lastname" />
+            <asp:BoundField DataField="ageyears" HeaderText="Years" SortExpression="ageyears" />
+            <asp:BoundField DataField="agemonths" HeaderText="Months" SortExpression="agemonths" />
+            <asp:TemplateField HeaderText="Details">
+                <ItemTemplate><a href="patientData.aspx?patientno=<%# Eval("patientno") %>" >Details</a></ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Print">
+                <ItemTemplate><a href="printDischarge.aspx?sno=<%# Eval("patientno") %>" >Print</a></ItemTemplate>
+            </asp:TemplateField>
         </Columns>
         <EditRowStyle BackColor="#2461BF" />
         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -77,7 +61,11 @@
     </asp:GridView>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
         ConnectionString="<%$ ConnectionStrings:IODatabaseConnectionString %>" 
-        SelectCommand="SELECT * FROM hospitals.opdform WHERE ((([firstname] LIKE '%' + @firstname + '%') OR ([lastname] LIKE '%' + @lastname + '%')) AND ([patientno]>'1')) ORDER BY [patientno] DESC">
+        SelectCommand="SELECT * FROM hospitals.opdform WHERE ((([firstname] LIKE '%' + @firstname + '%') OR ([lastname] LIKE '%' + @lastname + '%')) AND ([patientno]>'1') 
+        AND patientno IN
+        (SELECT patientno
+        from hospitals.discharge)
+        ) ORDER BY [patientno] DESC">
         <SelectParameters>
             <asp:ControlParameter ControlID="txtPatientNumber" DefaultValue="%" 
                 Name="firstname" PropertyName="Text" Type="String" />

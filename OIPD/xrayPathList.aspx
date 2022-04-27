@@ -1,12 +1,18 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="searchPatient.aspx.cs" Inherits="OIPD.searchPatient" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="xrayPathList.aspx.cs" Inherits="OIPD.xrayPathList" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <br />
+    <script type="text/javascript">
+function SetTarget() {
+     document.forms[0].target = "_blank";
+ }
+ </script>
+
+<br />
 <div class=" w3-container w3-card-4 w3-padding w3-center w3-centered w3-border w3-border-teal">
 
   <div class="w3-row">
       <div class="w3-col s3"><br /></div>
       <div class="w3-container w3-col s6 w3-light-blue w3-center">
-        <h2 class="w3-xlarge w3-center w3-text-teal"><b>SEARCH PATIENT</b></h2>
+        <h2 class="w3-xlarge w3-center w3-text-teal"><b>PATIENTS LIST</b></h2>
       </div>
   </div>
 
@@ -21,6 +27,8 @@
   </div>
   <br />
   <asp:Button ID="btnSearch" class="w3-center w3-round-xxlarge w3-large w3-btn w3-teal"  runat="server" Text="Search" OnClick="searching"/>
+  
+  <asp:Button ID="btnNotPatient" class="w3-center w3-round-xxlarge w3-large w3-btn w3-teal"  runat="server" Text="Not a Patient" OnClick="noPatient" OnClientClick="SetTarget()"/>
   <br /><br />
  <div class="w3-container">
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False"  CssClass="w3-table-all"
@@ -57,9 +65,9 @@
                 SortExpression="ageyears" />
             <asp:BoundField DataField="agemonths" HeaderText="Months" 
                 SortExpression="agemonths" />
-          <asp:TemplateField HeaderText="Action">
+          <asp:TemplateField HeaderText="Print">
           <ItemTemplate>
-          <a href="patientData.aspx?patientno=<%# Eval("patientno") %>" >Details</a>
+          <a href="printPathBill.aspx?sno=<%# Eval("patientno") %>" target="_blank" >Print Path</a>
           </ItemTemplate>
           </asp:TemplateField>
           
@@ -77,16 +85,36 @@
     </asp:GridView>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
         ConnectionString="<%$ ConnectionStrings:IODatabaseConnectionString %>" 
-        SelectCommand="SELECT * FROM hospitals.opdform WHERE ((([firstname] LIKE '%' + @firstname + '%') OR ([lastname] LIKE '%' + @lastname + '%')) AND ([patientno]>'1')) ORDER BY [patientno] DESC">
+        
+         SelectCommand="SELECT * FROM hospitals.opdform WHERE ((([firstname] LIKE '%' + @firstname + '%') OR ([lastname] LIKE '%' + @lastname + '%')) AND ([patientno] > '1')) ORDER BY patientno DESC">
         <SelectParameters>
             <asp:ControlParameter ControlID="txtPatientNumber" DefaultValue="%" 
                 Name="firstname" PropertyName="Text" Type="String" />
             <asp:ControlParameter ControlID="txtPatientNumber" DefaultValue="%" 
                 Name="lastname" PropertyName="Text" Type="String" />
+            <asp:Parameter DefaultValue="1" Name="patientno" Type="Int32" />
         </SelectParameters>
     </asp:SqlDataSource>
     </div>
 
 </div>
 <br />
+
+<script type="text/javascript">
+    $(function () {
+        $(function () {
+            var currentYear = (new Date).getFullYear();
+            var currentMonth = (new Date).getMonth() + 1;
+            var currentDay = (new Date).getDate();
+            $("#datepicker").datepicker({
+
+                minDate: new Date((currentYear - 1), 12, 1),
+                dateFormat: 'dd/mm/yy',
+                maxDate: new Date(currentYear, 11, 31) 
+            });
+
+        });
+
+    });
+</script>
 </asp:Content>

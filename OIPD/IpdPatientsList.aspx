@@ -72,10 +72,10 @@
         </asp:GridView>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
             ConnectionString="<%$ ConnectionStrings:IODatabaseConnectionString %>" 
-            SelectCommand="SELECT * FROM hospitals.ipdform WHERE (patientno IN (SELECT patientno from opdform where (([firstname] LIKE '%' + @firstname + '%') OR ([lastname] LIKE '%' + @lastname + '%'))) AND ([patientno]>'1'))
+            SelectCommand="SELECT * FROM hospitals.ipdform WHERE (patientno IN (SELECT patientno from hospitals.opdform where (([firstname] LIKE '%' + @firstname + '%') OR ([lastname] LIKE '%' + @lastname + '%'))) AND ([patientno]>'1'))
             and (patientno IN
                 (SELECT patientno
-                 FROM currentbedpatients))
+                 FROM hospitals.currentbedpatients))
              ORDER BY [dateofentry] DESC">
             <SelectParameters>
                 <asp:ControlParameter ControlID="txtPatientNumber" DefaultValue="%" Name="firstname" PropertyName="Text" Type="String" />
